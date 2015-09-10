@@ -1,4 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/home/vertchapeau/microblog/app'
-let g:netrw_dirhist_2='/home/vertchapeau/dotfiles/vim'
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/antoineuqam/lacim/jeudesw/jeu/templates/jeu'
+let g:netrw_dirhist_2='/home/antoineuqam/lacim/jeudesw/jeu/templates'
+let g:netrw_dirhist_3='/home/antoineuqam/lacim/jeudesw/jeu/templates/jeu'
+let g:netrw_dirhist_4='/home/antoineuqam/lacim/jeudesw/jeu/templates'
+let g:netrw_dirhist_5='/home/antoineuqam/lacim/jeudesw/jeu/templates/jeu'
+let g:netrw_dirhist_6='/home/antoineuqam/lacim/jeudesw/jeu/static'
+let g:netrw_dirhist_7='/home/antoineuqam/lacim/jeudesw/jeu/static/jeu'
+let g:netrw_dirhist_8='/home/antoineuqam/lacim/jeudesw/jeu/static/jeu/js'
+let g:netrw_dirhist_9='/home/antoineuqam/lacim/jeudesw/jeu/static/jeu'
