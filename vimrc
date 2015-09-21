@@ -59,7 +59,7 @@ set timeoutlen=300
 inoremap fj <Esc>l
 inoremap jf <Esc>l
 
-nnoremap <C-d> :NERDTreeToggle<CR>
+nnoremap <C-n> :NERDTreeToggle<CR>
 
 " Autoreload
 augroup reload_vimrc " {
@@ -77,7 +77,7 @@ function! NumberToggle()
   endif
 endfunc
 
-nnoremap <C-n> :call NumberToggle()<cr>
+nnoremap <C-m> :call NumberToggle()<cr>
 
 " ------------------------------------------------------------------------- }}}
 " Useful functions -------------------------------------------------------- {{{
