@@ -16,7 +16,6 @@ Plug 'mattn/emmet-vim'
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-vinegar'
 Plug 'itchyny/lightline.vim'
-
 call plug#end()
 
 " commentary
@@ -60,6 +59,8 @@ set timeoutlen=300
 inoremap fj <Esc>l
 inoremap jf <Esc>l
 
+nnoremap <C-d> :NERDTreeToggle<CR>
+
 " Autoreload
 augroup reload_vimrc " {
      au!
@@ -80,7 +81,7 @@ nnoremap <C-n> :call NumberToggle()<cr>
 
 " ------------------------------------------------------------------------- }}}
 " Useful functions -------------------------------------------------------- {{{
-autocmd vimenter * NERDTree
+let NERDTreeDirArrows=0
 
 " yank / paste from the clipboard ------------------------------------------ {{{
 

@@ -1,11 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/home/pobe/uqam/cmaint'
-let g:netrw_dirhist_2='/home/pobe/uqam/cmaint/c'
-let g:netrw_dirhist_3='/home/pobe/uqam/session3/cmaint/exemplesINF3135'
-let g:netrw_dirhist_4='/home/pobe/uqam/session3/cmaint/exemplesINF3135/C'
-let g:netrw_dirhist_5='/home/pobe/uqam/session3/cmaint/exemplesINF3135/C/04-pointeurs-int'
-let g:netrw_dirhist_6='/home/pobe/uqam/session3/cmaint/exemplesINF3135'
-let g:netrw_dirhist_7='/home/pobe/uqam/session3/cmaint/exemplesINF3135/C'
-let g:netrw_dirhist_8='/home/pobe/uqam/session3/cmaint/exemplesINF3135/C/03-Menu'
-let g:netrw_dirhist_9='/home/pobe/dotfiles/vim'
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/home/pobe/uqam/session3/cmaint/c'
