@@ -3,6 +3,7 @@ map <Space> <Leader>
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-commentary'
 Plug 'mhinz/vim-startify' 
@@ -79,6 +80,7 @@ nnoremap <C-n> :call NumberToggle()<cr>
 
 " ------------------------------------------------------------------------- }}}
 " Useful functions -------------------------------------------------------- {{{
+autocmd vimenter * NERDTree
 
 " yank / paste from the clipboard ------------------------------------------ {{{
 

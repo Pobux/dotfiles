@@ -3,6 +3,7 @@ map <Space> <Leader>
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-commentary'
 Plug 'mhinz/vim-startify' 
