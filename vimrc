@@ -31,6 +31,8 @@ syntax enable
 colorscheme monokai
 let g:ycm_filetype_whitelist = { 'cpp': 1, 'c': 1 }
 
+" By file type
+autocmd FileType c setlocal shiftwidth=2 tabstop=2
 " Remap
 " add tab
 nnoremap gn :tabnew<CR>
@@ -95,4 +97,11 @@ nnoremap <Leader>p :set paste<CR>"*]p:set nopaste<cr>
 " yank to system clipboard
 vmap <Leader>y "+y
 nmap <Leader>yy "+yy
+ 
+" Trigger configuration. Do not use <tab> if you use
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
+set encoding=utf-8  " The encoding displayed.
+set fileencoding=utf-8  " The encoding written to file."
