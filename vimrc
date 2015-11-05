@@ -16,6 +16,9 @@ Plug 'mattn/emmet-vim'
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-vinegar'
 Plug 'itchyny/lightline.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+Plug 'Valloric/YouCompleteMe', { 'for': 'cpp', 'do': './install.py' }
+autocmd! User YouCompleteMe call youcompleteme#Enable()
 call plug#end()
 
 " commentary
