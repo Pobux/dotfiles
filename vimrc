@@ -1,6 +1,6 @@
 let mapleader = " "
 map <Space> <Leader>
-
+:set mouse=a
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
@@ -105,6 +105,7 @@ nmap <Leader>yy "+yy
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsUsePythonVersion = 2
 
 set encoding=utf-8  " The encoding displayed.
 set fileencoding=utf-8  " The encoding written to file."
