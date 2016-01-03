@@ -1,28 +1,28 @@
-let mapleader = " "
-map <Space> <Leader>
+" TODO
+" ctrl shift V after autodelete end of copying
+" ctrl / pour les commentaires (voir le plugin de commentary au cas ou)
+"
+
 :set mouse=a
+map <Space> <Leader>
+
 call plug#begin('~/.vim/plugged')
 
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-commentary'
 Plug 'mhinz/vim-startify' 
-Plug 'tpope/vim-unimpaired'
 Plug 'vim-scripts/DrawIt'
 Plug 'scrooloose/syntastic'
+Plug 'mattn/emmet-vim'
+Plug 'itchyny/lightline.vim'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'mattn/emmet-vim'
-Plug 'mhinz/vim-signify'
-Plug 'tpope/vim-vinegar'
-Plug 'itchyny/lightline.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
-Plug 'Valloric/YouCompleteMe', { 'for': 'cpp', 'do': './install.py' }
-autocmd! User YouCompleteMe call youcompleteme#Enable()
+
+autocmd! User YouCompleteMe if !has('vim_starting') | call youcompleteme#Enable() | endif
 call plug#end()
 
 " commentary
-nmap <space>c <Plug>CommentaryLine
+map <C-_> <Plug>CommentaryLine
 
 "Interface setup
 filetype plugin indent on
@@ -34,8 +34,11 @@ syntax enable
 colorscheme monokai
 let g:ycm_filetype_whitelist = { 'cpp': 1, 'c': 1 }
 
+
 " By file type
+" c autoindent
 autocmd FileType c setlocal shiftwidth=2 tabstop=2
+
 " Remap
 " add tab
 nnoremap gn :tabnew<CR>
@@ -64,8 +67,6 @@ set timeoutlen=300
 inoremap fj <Esc>l
 inoremap jf <Esc>l
 
-nnoremap <C-n> :NERDTreeToggle<CR>
-
 " Autoreload
 augroup reload_vimrc " {
      au!
@@ -82,21 +83,18 @@ function! NumberToggle()
   endif
 endfunc
 
+let NERDTreeDirArrows=0
 nnoremap <C-m> :call NumberToggle()<cr>
 
-" ------------------------------------------------------------------------- }}}
-" Useful functions -------------------------------------------------------- {{{
-let NERDTreeDirArrows=0
-
-" yank to system clipboard
-vmap <Leader>y "+y
-nmap <Leader>yy "+yy
- 
-" Trigger configuration. Do not use <tab> if you use
+" Trigger configuration. Do not use <tab> if you use YCM, but here YCM never works anyway
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsUsePythonVersion = 2
+
+" yank to system clipboard
+vmap <Leader>y "+y
+nmap <Leader>yy "+yy
 
 set encoding=utf-8  " The encoding displayed.
 set fileencoding=utf-8  " The encoding written to file."
