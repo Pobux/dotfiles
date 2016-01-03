@@ -29,3 +29,7 @@ for file in $files; do
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/.$file
 done
+
+#build plugging dependencies with Plug and Vim
+echo "Enabling plugins"
+vim -T dumb --noplugin -n -S "command" "filespec"

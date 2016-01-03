@@ -1,0 +1,2 @@
+:PlugClean
+:PlugInstall

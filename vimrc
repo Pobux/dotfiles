@@ -88,15 +88,6 @@ nnoremap <C-m> :call NumberToggle()<cr>
 " Useful functions -------------------------------------------------------- {{{
 let NERDTreeDirArrows=0
 
-" yank / paste from the clipboard ------------------------------------------ {{{
-
-" enable copy/paste on Mac OSX and tmux (see also notes/macosx.notes)
-set clipboard=unnamed
-
-" toggle (no)paste before pasting from the clipboard
-" Reference: http://tilvim.com/2014/03/18/a-better-paste.html
-nnoremap <Leader>p :set paste<CR>"*]p:set nopaste<cr>
-
 " yank to system clipboard
 vmap <Leader>y "+y
 nmap <Leader>yy "+yy
