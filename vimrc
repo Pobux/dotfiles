@@ -1,5 +1,3 @@
-" TODO
-" ctrl shift V after autodelete end of copying
 " Fix snippets
 
 :set mouse=a
@@ -22,6 +20,7 @@ call plug#end()
 
 " commentary
 map <C-_> <Plug>CommentaryLine
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 "Interface setup
 filetype plugin indent on
@@ -66,6 +65,13 @@ set timeoutlen=300
 inoremap fj <Esc>l
 inoremap jf <Esc>l
 
+" Setting clipboard system to + and use c-v c-c (visual mode, y works fine
+" tough)
+set clipboard=unnamedplus
+set pastetoggle=<F2>
+inoremap <C-v> <F2><C-r>+<F2>
+vnoremap <C-c> "+y
+
 " Autoreload
 augroup reload_vimrc " {
      au!
@@ -86,10 +92,6 @@ let NERDTreeDirArrows=0
 nnoremap <C-m> :call NumberToggle()<cr>
 
 " Trigger configuration. Do not use <tab> if you use YCM, but here YCM never works anyway
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:UltiSnipsUsePythonVersion = 2
 
 " yank to system clipboard
 vmap <Leader>y "+y
