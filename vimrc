@@ -1,7 +1,6 @@
 " TODO
 " ctrl shift V after autodelete end of copying
-" ctrl / pour les commentaires (voir le plugin de commentary au cas ou)
-"
+" Fix snippets
 
 :set mouse=a
 map <Space> <Leader>
