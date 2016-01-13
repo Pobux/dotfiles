@@ -7,15 +7,15 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-commentary'
 Plug 'mhinz/vim-startify' 
-Plug 'vim-scripts/DrawIt'
+" Plug 'vim-scripts/DrawIt'
 Plug 'scrooloose/syntastic'
-Plug 'mattn/emmet-vim'
+" Plug 'mattn/emmet-vim'
 Plug 'itchyny/lightline.vim'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-
-autocmd! User YouCompleteMe if !has('vim_starting') | call youcompleteme#Enable() | endif
+Plug 'Shougo/neocomplete.vim'
+Plug 'Shougo/vimproc.com'
+Plug 'Shougo/reunions.com'
 call plug#end()
 
 " commentary
@@ -28,10 +28,16 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set number
+set incsearch
+set nobackup
+set noswapfile
 syntax enable
 colorscheme monokai
 let g:ycm_filetype_whitelist = { 'cpp': 1, 'c': 1 }
-
+let g:neocomplete#enable_at_startup = 1
+let g:marching_clang_command = "/home/vertchapeau/clang+llvm-3.7.1-x86_64-linux-gnu-ubuntu-14.04/bin/clang"
+let g:marching_enable_neocomplete = 1
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " By file type
 " c autoindent
@@ -57,7 +63,6 @@ inoremap ' ''<ESC>i
 inoremap ( ()<ESC>i
 inoremap { {}<ESC>i
 inoremap [ []<ESC>i
-inoremap < <><ESC>i
 inoremap ` ``<ESC>i
 inoremap <C-l> <ESC>la
 inoremap <C-d> <ESC>lxi
