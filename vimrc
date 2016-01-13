@@ -15,7 +15,6 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'Shougo/neocomplete.vim'
 Plug 'Shougo/vimproc.com'
-Plug 'Shougo/reunions.com'
 call plug#end()
 
 " commentary
@@ -23,7 +22,9 @@ map <C-_> <Plug>CommentaryLine
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 "Interface setup
-filetype plugin indent on
+filetype on
+filetype indent on
+filetype plugin on
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -33,11 +34,13 @@ set nobackup
 set noswapfile
 syntax enable
 colorscheme monokai
-let g:ycm_filetype_whitelist = { 'cpp': 1, 'c': 1 }
 let g:neocomplete#enable_at_startup = 1
 let g:marching_clang_command = "/home/vertchapeau/clang+llvm-3.7.1-x86_64-linux-gnu-ubuntu-14.04/bin/clang"
 let g:marching_enable_neocomplete = 1
+let g:UltiSnipsExpandTrigger="<c-e>"
+let g:UltiSnipsListSnippets="<c-l>"
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
 
 " By file type
 " c autoindent
