@@ -14,12 +14,12 @@ Plug 'mhinz/vim-startify'
 Plug 'vim-scripts/DrawIt'
 Plug 'scrooloose/syntastic'
 Plug 'Valloric/YouCompleteMe'
-" Plug 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim'
 Plug 'itchyny/lightline.vim'
-" Plug 'SirVer/ultisnips'
-" Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
+Plug 'ervandew/supertab'
+Plug 'honza/vim-snippets'
 " Plug 'MarcWeber/vim-addon-manager'
-" Plug 'mattn/emmet-vim'
 " Plug 'StanAngeloff/php.vim'
 call plug#end()
 
@@ -45,6 +45,17 @@ autocmd FileType c setlocal shiftwidth=2 tabstop=2
 
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_confirm_extra_conf=0
+
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 " Remap
 " add tab
