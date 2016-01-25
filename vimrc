@@ -2,29 +2,33 @@
 
 :set mouse=a
 map <Space> <Leader>
+set nocompatible
+filetype on
+filetype indent on
+filetype plugin on
 
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-commentary'
 Plug 'mhinz/vim-startify' 
-" Plug 'vim-scripts/DrawIt'
+Plug 'vim-scripts/DrawIt'
 Plug 'scrooloose/syntastic'
+Plug 'Valloric/YouCompleteMe'
 " Plug 'mattn/emmet-vim'
 Plug 'itchyny/lightline.vim'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-" Plug 'Shougo/neocomplete.vim'
-" Plug 'Shougo/vimproc.com'
+" Plug 'SirVer/ultisnips'
+" Plug 'honza/vim-snippets'
+" Plug 'MarcWeber/vim-addon-manager'
+" Plug 'mattn/emmet-vim'
+" Plug 'StanAngeloff/php.vim'
 call plug#end()
 
 " commentary
 map <C-_> <Plug>CommentaryLine
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+autocmd filetype php set filetype=php.html
 
 "Interface setup
-filetype on
-filetype indent on
-filetype plugin on
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -34,15 +38,13 @@ set nobackup
 set noswapfile
 syntax enable
 colorscheme monokai
-" let g:neocomplete#enable_at_startup = 1
-" let g:marching_clang_command = "/home/vertchapeau/clang+llvm-3.7.1-x86_64-linux-gnu-ubuntu-14.04/bin/clang"
-" let g:marching_enable_neocomplete = 1
-" inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-
 
 " By file type
 " c autoindent
 autocmd FileType c setlocal shiftwidth=2 tabstop=2
+
+" YouCompleteMe
+let g:ycm_autoclose_preview_window_after_completion=1
 
 " Remap
 " add tab
