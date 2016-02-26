@@ -21,6 +21,7 @@ Plug 'ervandew/supertab'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'honza/vim-snippets'
+Plug 'lepture/vim-jinja'
 " Plug 'MarcWeber/vim-addon-manager'
 " Plug 'StanAngeloff/php.vim'
 call plug#end()
@@ -130,3 +131,4 @@ nmap <Leader>yy "+yy
 
 set encoding=utf-8  " The encoding displayed.
 set fileencoding=utf-8  " The encoding written to file."
+
