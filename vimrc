@@ -22,8 +22,9 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'honza/vim-snippets'
 Plug 'lepture/vim-jinja'
-" Plug 'MarcWeber/vim-addon-manager'
-" Plug 'StanAngeloff/php.vim'
+Plug 'vim-scripts/indentpython.vim'
+Plug 'scrooloose/nerdtree'
+"Plug 'kien/ctrlp.vim'
 call plug#end()
 
 " commentary
@@ -41,6 +42,21 @@ set nobackup
 set noswapfile
 syntax enable
 colorscheme monokai
+
+"Python setup
+au BufNewFile, BufRead *.py
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set shiftwidth=4
+    \ set textwidth=79
+    \ set expandtab
+    \ set autoindent
+    \ set fileformat=unix
+
+"Folding
+set foldmethod=indent
+set foldlevel=99
+nnoremap <space> za
 
 " By file type
 " c autoindent
@@ -72,6 +88,8 @@ let g:syntastic_check_on_wq = 0
 
 " Remap
 " add tab
+set splitbelow
+set splitright
 nnoremap gn :tabnew<CR>
 " Move the tab to the right
 nnoremap <leader>mt :tabmove +1<CR>
@@ -111,7 +129,11 @@ augroup reload_vimrc " {
      autocmd BufWritePost $MYVIMRC source $MYVIMRC   
 augroup END " }
 
-"Relative numbering
+let NERDTreeDirArrows=0
+let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+map <C-n> :NERDTreeToggle<CR>
+
+"Change toggle for line number
 function! NumberToggle()
   if(&relativenumber == 1)
     set number
@@ -120,10 +142,10 @@ function! NumberToggle()
   endif
 endfunc
 
-let NERDTreeDirArrows=0
 nnoremap <C-m> :call NumberToggle()<cr>
 
-" Trigger configuration. Do not use <tab> if you use YCM, but here YCM never works anyway
+:au FocusLost * :set number
+:au FocusGained * :set relativenumber
 
 " yank to system clipboard
 vmap <Leader>y "+y
