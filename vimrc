@@ -166,4 +166,4 @@ nmap <Leader>yy "+yy
 set encoding=utf-8  " The encoding displayed.
 set fileencoding=utf-8  " The encoding written to file."
 
-
+:let g:syntastic_loc_list_height=5
