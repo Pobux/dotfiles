@@ -9,3 +9,5 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 export LS_OPTIONS='--color=auto'
 eval "`dircolors`"
 alias ls='ls $LS_OPTIONS'
+
+export GIT_SSL_NO_VERIFY=1
