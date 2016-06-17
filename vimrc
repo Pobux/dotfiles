@@ -55,7 +55,7 @@ au BufNewFile, BufRead *.py
 
 "Header of .py file
 autocmd bufnewfile *.py 0r $HOME/.vim/header/python.template 
-autocmd bufnewfile *.py exe "%s/Creation Date : /Creation Date : " .strftime("%d-%m-%Y")
+autocmd bufnewfile *.py exe "%s/Creation Date : /Creation Date : " .strftime("%Y-%m-%d")
 autocmd bufnewfile *.py execute 'normal G' | startinsert!
 let python_highlight_all=1
 

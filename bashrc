@@ -8,6 +8,9 @@ export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 export LS_OPTIONS='--color=auto'
 eval "`dircolors`"
+
 alias ls='ls $LS_OPTIONS'
+alias python=python3
 
 export GIT_SSL_NO_VERIFY=1
+export TERM=screen-256color
