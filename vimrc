@@ -21,8 +21,10 @@ Plug 'ervandew/supertab'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'honza/vim-snippets'
-" Plug 'MarcWeber/vim-addon-manager'
-" Plug 'StanAngeloff/php.vim'
+Plug 'lepture/vim-jinja'
+Plug 'vim-scripts/indentpython.vim'
+Plug 'scrooloose/nerdtree'
+"Plug 'kien/ctrlp.vim'
 call plug#end()
 
 " commentary
@@ -41,6 +43,27 @@ set noswapfile
 syntax enable
 colorscheme monokai
 
+"Python setup
+au BufNewFile, BufRead *.py
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set shiftwidth=4
+    \ set textwidth=79
+    \ set expandtab
+    \ set autoindent
+    \ set fileformat=unix
+
+"Header of .py file
+autocmd bufnewfile *.py 0r $HOME/.vim/header/python.template 
+autocmd bufnewfile *.py exe "%s/Creation Date : /Creation Date : " .strftime("%d-%m-%Y")
+autocmd bufnewfile *.py execute 'normal G' | startinsert!
+let python_highlight_all=1
+
+"Folding
+set foldmethod=indent
+set foldlevel=99
+nnoremap <space> za
+
 " By file type
 " c autoindent
 autocmd FileType c setlocal shiftwidth=2 tabstop=2
@@ -53,6 +76,16 @@ let g:ycm_confirm_extra_conf=0
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
+
+"support virtualenv
+py << EOF
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+  project_base_dir = os.environ['VIRTUAL_ENV']
+  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+  execfile(activate_this, dict(__file__=activate_this))
+EOF
 
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger = "<tab>"
@@ -71,6 +104,8 @@ let g:syntastic_check_on_wq = 0
 
 " Remap
 " add tab
+set splitbelow
+set splitright
 nnoremap gn :tabnew<CR>
 " Move the tab to the right
 nnoremap <leader>mt :tabmove +1<CR>
@@ -110,7 +145,11 @@ augroup reload_vimrc " {
      autocmd BufWritePost $MYVIMRC source $MYVIMRC   
 augroup END " }
 
-"Relative numbering
+let NERDTreeDirArrows=0
+let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+map <C-n> :NERDTreeToggle<CR>
+
+"Change toggle for line number
 function! NumberToggle()
   if(&relativenumber == 1)
     set number
@@ -119,10 +158,10 @@ function! NumberToggle()
   endif
 endfunc
 
-let NERDTreeDirArrows=0
 nnoremap <C-m> :call NumberToggle()<cr>
 
-" Trigger configuration. Do not use <tab> if you use YCM, but here YCM never works anyway
+:au FocusLost * :set number
+:au FocusGained * :set relativenumber
 
 " yank to system clipboard
 vmap <Leader>y "+y
@@ -130,3 +169,5 @@ nmap <Leader>yy "+yy
 
 set encoding=utf-8  " The encoding displayed.
 set fileencoding=utf-8  " The encoding written to file."
+
+:let g:syntastic_loc_list_height=5
