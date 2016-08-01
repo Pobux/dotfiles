@@ -59,6 +59,9 @@ autocmd bufnewfile *.py exe "%s/Creation Date : /Creation Date : " .strftime("%Y
 autocmd bufnewfile *.py execute 'normal G' | startinsert!
 let python_highlight_all=1
 
+" Jinja
+au BufNewFile,BufRead *.html,*.html,*.shtml,*stm set ft=jinja
+
 "Folding
 set foldmethod=indent
 set foldlevel=99
@@ -67,6 +70,18 @@ nnoremap <space> za
 " By file type
 " c autoindent
 autocmd FileType c setlocal shiftwidth=2 tabstop=2
+
+
+" Autoincrement shortcut, use visual block + Ctrl+A
+function! Incr()
+    let a = line('.') - line("'<")
+    let c = virtcol("'<")
+    if a > 0
+        execute 'normal! '.c.'|'.a."\<C-a>"
+    endif
+    normal `<
+endfunction
+vnoremap <C-a> :call Incr()<CR>
 
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion=1
