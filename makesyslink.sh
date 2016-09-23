@@ -33,3 +33,5 @@ done
 #build plugging dependencies with Plug and Vim
 echo "Enabling plugins"
 vim -T dumb --noplugin -n -S "command" "filespec"
+echo "Trying to compile YouCompleteMe (Need CMake)"
+python vim/plugged/YouCompleteMe/install.py

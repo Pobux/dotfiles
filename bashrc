@@ -1,6 +1,5 @@
 alias ls='ls --color=auto'
 alias tmux="tmux -2"
-alias python="python3"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
@@ -11,7 +10,6 @@ export LS_OPTIONS='--color=auto'
 eval "`dircolors`"
 
 alias ls='ls $LS_OPTIONS'
-alias python=python3
 
 export GIT_SSL_NO_VERIFY=1
 export TERM=screen-256color
