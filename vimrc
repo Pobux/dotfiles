@@ -24,8 +24,6 @@ Plug 'honza/vim-snippets'
 Plug 'lepture/vim-jinja'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'scrooloose/nerdtree'
-" Plug 'vim-scripts/groovy.vim'
-"Plug 'kien/ctrlp.vim'
 call plug#end()
 
 " commentary

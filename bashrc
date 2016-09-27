@@ -11,12 +11,11 @@ export LS_OPTIONS='--color=auto'
 eval "`dircolors`"
 
 alias ls='ls $LS_OPTIONS'
-alias python=python3
 
 export GIT_SSL_NO_VERIFY=1
 export TERM=screen-256color
 export PATH="$HOME/.cabal/bin:/opt/cabal/1.22/bin:/opt/ghc/7.10.3/bin:$PATH"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/pobe/.sdkman"
-[[ -s "/home/pobe/.sdkman/bin/sdkman-init.sh" ]] && source "/home/pobe/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="/home/$(whoami)/.sdkman"
+[[ -s "/home/$(whoami)/.sdkman/bin/sdkman-init.sh" ]] && source "/home/$(whoami)/.sdkman/bin/sdkman-init.sh"
