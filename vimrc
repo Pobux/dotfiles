@@ -24,6 +24,7 @@ Plug 'honza/vim-snippets'
 Plug 'lepture/vim-jinja'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'scrooloose/nerdtree'
+" Plug 'vim-scripts/groovy.vim'
 "Plug 'kien/ctrlp.vim'
 call plug#end()
 
@@ -186,3 +187,7 @@ set encoding=utf-8  " The encoding displayed.
 set fileencoding=utf-8  " The encoding written to file."
 
 :let g:syntastic_loc_list_height=5
+
+"Debugging"
+let g:ycm_server_keep_logfiles = 1
+let g:ycm_server_log_level = 'debug'
