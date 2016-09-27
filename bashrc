@@ -13,3 +13,5 @@ alias ls='ls $LS_OPTIONS'
 
 export GIT_SSL_NO_VERIFY=1
 export TERM=screen-256color
+export VISUAL=vim
+export EDITOR="$VISUEL"
