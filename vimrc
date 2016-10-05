@@ -24,6 +24,7 @@ Plug 'honza/vim-snippets'
 Plug 'lepture/vim-jinja'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'jmcantrell/vim-virtualenv'
 call plug#end()
 
 " commentary
@@ -90,16 +91,6 @@ let g:ycm_confirm_extra_conf=0
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
-
-"support virtualenv
-py << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-  project_base_dir = os.environ['VIRTUAL_ENV']
-  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-  execfile(activate_this, dict(__file__=activate_this))
-EOF
 
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger = "<tab>"
