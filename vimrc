@@ -12,7 +12,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-commentary'
 Plug 'mhinz/vim-startify' 
 Plug 'vim-scripts/DrawIt'
-Plug 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic', {'commit': '59cc80a'}
 Plug 'Valloric/YouCompleteMe'
 Plug 'mattn/emmet-vim'
 Plug 'itchyny/lightline.vim'
@@ -25,6 +25,7 @@ Plug 'lepture/vim-jinja'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'jmcantrell/vim-virtualenv'
+Plug 'digitaltoad/vim-pug'
 call plug#end()
 
 " commentary

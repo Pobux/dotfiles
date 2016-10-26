@@ -21,3 +21,6 @@ export EDITOR="$VISUEL"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/$(whoami)/.sdkman"
 [[ -s "/home/$(whoami)/.sdkman/bin/sdkman-init.sh" ]] && source "/home/$(whoami)/.sdkman/bin/sdkman-init.sh"
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
