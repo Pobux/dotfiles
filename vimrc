@@ -26,6 +26,9 @@ Plug 'vim-scripts/indentpython.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'jmcantrell/vim-virtualenv'
 Plug 'digitaltoad/vim-pug'
+Plug 'derekwyatt/vim-scala'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 call plug#end()
 
 " commentary
@@ -60,8 +63,11 @@ autocmd bufnewfile *.py exe "%s/Creation Date : /Creation Date : " .strftime("%Y
 autocmd bufnewfile *.py execute 'normal G' | startinsert!
 let python_highlight_all=1
 
-" Jinja
+"Jinja
 au BufNewFile,BufRead *.html,*.html,*.shtml,*stm set ft=jinja
+
+"JS
+let g:jsx_ext_required = 0
 
 "Folding
 set foldmethod=indent
