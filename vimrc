@@ -26,6 +26,7 @@ Plug 'vim-scripts/indentpython.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'jmcantrell/vim-virtualenv'
 Plug 'digitaltoad/vim-pug'
+Plug 'derekwyatt/vim-scala'
 call plug#end()
 
 " commentary
