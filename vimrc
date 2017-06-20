@@ -12,8 +12,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-commentary'
 Plug 'mhinz/vim-startify' 
 Plug 'vim-scripts/DrawIt'
-Plug 'scrooloose/syntastic', {'commit': '59cc80a'}
-Plug 'Valloric/YouCompleteMe'
+Plug 'scrooloose/syntastic'
+Plug 'Valloric/YouCompleteMe', { 'do' : './install.py'}
 Plug 'mattn/emmet-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'SirVer/ultisnips'
@@ -27,6 +27,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'jmcantrell/vim-virtualenv'
 Plug 'digitaltoad/vim-pug'
 Plug 'derekwyatt/vim-scala'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 call plug#end()
 
 " commentary
@@ -61,8 +63,12 @@ autocmd bufnewfile *.py exe "%s/Creation Date : /Creation Date : " .strftime("%Y
 autocmd bufnewfile *.py execute 'normal G' | startinsert!
 let python_highlight_all=1
 
-" Jinja
+"Jinja
 au BufNewFile,BufRead *.html,*.html,*.shtml,*stm set ft=jinja
+
+"JS
+let g:jsx_ext_required = 0
+let g:syntastic_javascript_checkers = ['eslint']
 
 "Folding
 set foldmethod=indent
@@ -72,7 +78,6 @@ nnoremap <space> za
 " By file type
 " c autoindent
 autocmd FileType c setlocal shiftwidth=2 tabstop=2
-
 
 " Autoincrement shortcut, use visual block + Ctrl+A
 function! Incr()
@@ -108,6 +113,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_loc_list_height=5
 
 " Remap
 " add tab
@@ -176,8 +182,6 @@ nmap <Leader>yy "+yy
 
 set encoding=utf-8  " The encoding displayed.
 set fileencoding=utf-8  " The encoding written to file."
-
-:let g:syntastic_loc_list_height=5
 
 "Debugging"
 let g:ycm_server_keep_logfiles = 1

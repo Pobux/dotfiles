@@ -8,7 +8,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bashrc vimrc vim tmux.conf ycm_extra_conf.py"    # list of files/folders to symlink in homedir
+files="eslintrc bashrc vimrc vim tmux.conf"    # list of files/folders to symlink in homedir
 
 ##########
 
@@ -34,4 +34,4 @@ done
 echo "Enabling plugins"
 vim -T dumb --noplugin -n -S "command" "filespec"
 echo "Trying to compile YouCompleteMe (Need CMake)"
-python vim/plugged/YouCompleteMe/install.py
+python3 vim/plugged/YouCompleteMe/install.py
