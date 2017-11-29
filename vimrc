@@ -13,7 +13,7 @@ Plug 'tpope/vim-commentary'
 Plug 'mhinz/vim-startify' 
 Plug 'vim-scripts/DrawIt'
 Plug 'scrooloose/syntastic'
-Plug 'Valloric/YouCompleteMe', { 'do' : './install.py'}
+Plug 'Valloric/YouCompleteMe', { 'do' : 'python3 install.py'}
 Plug 'mattn/emmet-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'SirVer/ultisnips'
