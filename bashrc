@@ -1,6 +1,7 @@
 alias ls='ls --color=auto'
 alias tmux="tmux -2"
 alias ll='ls -la'
+alias psg='ps -aux | grep $1'
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
