@@ -2,6 +2,7 @@ alias ls='ls --color=auto'
 alias tmux="tmux -2"
 alias ll='ls -la'
 alias psg='ps -aux | grep $1'
+alias v='vim -u ~/.vimrc_antoine'
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
