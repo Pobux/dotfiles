@@ -1,7 +1,8 @@
 alias ls='ls --color=auto'
 alias tmux="tmux -2"
-alias ll='ls -l'
-alias la='ls -la'
+alias ll='ls -la'
+alias psg='ps -aux | grep $1'
+alias v='vim -u ~/.vimrc_antoine'
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
@@ -20,10 +21,10 @@ export PATH="$HOME/.cabal/bin:/opt/cabal/1.22/bin:/opt/ghc/7.10.3/bin:$PATH"
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
-mkdir /var/run/sshd > /dev/null 2>&1
-chmod 0755 /var/run/sshd
-
-start-stop-daemon --start --pidfile /var/run/sshd.pid --exec /usr/sbin/sshd -- -p 22
-
-service rabbitmq-server start
-/root/start_mongo.sh
+#mkdir /var/run/sshd > /dev/null 2>&1
+#chmod 0755 /var/run/sshd
+#
+#start-stop-daemon --start --pidfile /var/run/sshd.pid --exec /usr/sbin/sshd -- -p 22
+#
+#service rabbitmq-server start
+#/root/start_mongo.sh
