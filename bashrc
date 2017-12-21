@@ -1,5 +1,7 @@
 alias ls='ls --color=auto'
 alias tmux="tmux -2"
+alias ll='ls -l'
+alias la='ls -la'
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
@@ -7,7 +9,7 @@ export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 export LS_OPTIONS='--color=auto'
-eval "`dircolors`"
+# eval "`dircolors`"
 
 alias ls='ls $LS_OPTIONS'
 
@@ -16,15 +18,12 @@ export TERM=screen-256color
 export PATH="$HOME/.cabal/bin:/opt/cabal/1.22/bin:/opt/ghc/7.10.3/bin:$PATH"
 
 export VISUAL=vim
-export EDITOR="$VISUEL"
+export EDITOR="$VISUAL"
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+mkdir /var/run/sshd > /dev/null 2>&1
+chmod 0755 /var/run/sshd
 
-###Goddamn JAVA so boring
-export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64/jre/"
+start-stop-daemon --start --pidfile /var/run/sshd.pid --exec /usr/sbin/sshd -- -p 22
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/$(whoami)/.sdkman"
-[[ -s "/home/$(whoami)/.sdkman/bin/sdkman-init.sh" ]] && source "/home/$(whoami)/.sdkman/bin/sdkman-init.sh"
-
+service rabbitmq-server start
+/root/start_mongo.sh
