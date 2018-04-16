@@ -10,7 +10,7 @@ export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 export LS_OPTIONS='--color=auto'
-eval "`dircolors`"
+# eval "`dircolors`"
 
 alias ls='ls $LS_OPTIONS'
 
@@ -20,3 +20,11 @@ export PATH="$HOME/.cabal/bin:/opt/cabal/1.22/bin:/opt/ghc/7.10.3/bin:$PATH"
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
+
+#mkdir /var/run/sshd > /dev/null 2>&1
+#chmod 0755 /var/run/sshd
+#
+#start-stop-daemon --start --pidfile /var/run/sshd.pid --exec /usr/sbin/sshd -- -p 22
+#
+#service rabbitmq-server start
+#/root/start_mongo.sh

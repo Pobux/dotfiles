@@ -30,6 +30,12 @@ for file in $files; do
     ln -s $dir/$file ~/.$file
 done
 
+#Just so Vim-Plug can install its stuff
+mv ~/.vimrc ~/._vimrc
+ln -s ~/dotfiles/vimrc_antoine ~/.vimrc
+
 #build plugging dependencies with Plug and Vim
 echo "Enabling plugins"
 vim -T dumb --noplugin -n -S "command" "filespec"
+
+mv ~/._vimrc ~/.vimrc
