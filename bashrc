@@ -19,3 +19,8 @@ export TERM=screen-256color
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
+
+#GOPATH is the workspace
+#GOROOT should match `which go` parent path
+export GOROOT=/usr/lib/go-1.10/
+export GOPATH=~/go
