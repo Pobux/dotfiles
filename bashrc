@@ -16,7 +16,7 @@ alias ls='ls $LS_OPTIONS'
 
 export GIT_SSL_NO_VERIFY=1
 export TERM=screen-256color
-export PATH="$HOME/.cabal/bin:/opt/cabal/1.22/bin:/opt/ghc/7.10.3/bin:$PATH"
+# export PATH="$HOME/.cabal/bin:/opt/cabal/1.22/bin:/opt/ghc/7.10.3/bin:$PATH"
 
 export VISUAL=vim
 export EDITOR="$VISUAL"

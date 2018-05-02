@@ -5,4 +5,4 @@ if [ -n "$BASH_VERSION" ]; then
 fi
 
 PATH="$HOME/bin:$HOME/.local/bin:$PATH"
-
+export PATH=$PATH:/usr/local/go/bin:~/go/bin
