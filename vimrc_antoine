@@ -30,6 +30,8 @@ Plug 'digitaltoad/vim-pug'
 Plug 'derekwyatt/vim-scala'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
+" Based on this https://coolaj86.com/articles/getting-started-with-golang-and-vim
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
 " commentary
@@ -67,7 +69,27 @@ let python_highlight_all=1
 "Jinja
 au BufNewFile,BufRead *.html,*.html,*.shtml,*stm set ft=jinja
 
-"JS
+"Go setup
+" use goimports for formatting
+let g:go_fmt_command = "goimports"
+let g:go_version_warning = 0
+
+" turn highlighting on
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
+let g:syntastic_go_checkers = ['go', 'golint', 'errcheck']
+
+" Open go doc in vertical window, horizontal, or tab
+au Filetype go nnoremap <leader>v :vsp <CR>:exe "GoDef" <CR>
+au Filetype go nnoremap <leader>s :sp <CR>:exe "GoDef"<CR>
+au Filetype go nnoremap <leader>t :tab split <CR>:exe "GoDef"<CR>
+
+"JS setup
+
 let g:jsx_ext_required = 0
 let g:syntastic_javascript_checkers = ['eslint']
 
