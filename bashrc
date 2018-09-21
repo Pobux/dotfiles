@@ -18,8 +18,3 @@ export GIT_SSL_NO_VERIFY=1
 export TERM=screen-256color
 export VISUAL=vim
 export EDITOR="$VISUAL"
-
-#GOPATH is the workspace
-#GOROOT should match `which go` parent path
-export GOROOT=/usr/lib/go
-export GOPATH=~/go
